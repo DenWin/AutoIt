@@ -5,10 +5,10 @@ opt( "TrayIconHide",1 ) ;I dont like having unnecessary icons on my tray. Feel f
 $wintitle="Display Rotator"
 _Singleton( $wintitle )
 RegWrite( "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run", $wintitle, "REG_SZ", @ScriptFullPath ) ;AutoStart with Windows
-HotKeySet( "^!{up}",    "_Landscape" )
-HotKeySet( "^!{down}",  "_Landscape_flipped" )
-HotKeySet( "^!{left}",  "_Portrait" )
-HotKeySet( "^!{right}", "_Portrait_flipped" )
+HotKeySet( "^!{up}",    "_Landscape" )         ; Ctrl + Alt + Up
+HotKeySet( "^!{down}",  "_Landscape_flipped" ) ; Ctrl + Alt + Down
+HotKeySet( "^!{left}",  "_Portrait" )          ; Ctrl + Alt + Left
+HotKeySet( "^!{right}", "_Portrait_flipped" )  ; Ctrl + Alt + Right
 Global Enum $screenOrientationLandscape, $screenOrientationPortrait, $screenOrientationLandscapeFlipped, $screenOrientationPortraitFlipped
 Global Const $tagDEVMODE_DISPLAY2 = 'wchar DeviceName[32];ushort SpecVersion;ushort DriverVersion;ushort Size;ushort DriverExtra;dword Fields;' & $tagPOINT & ';dword DisplayOrientation;dword DisplayFixedOutput;short Color;short Duplex;short YResolution;short TTOption;short Collate;wchar Unused2[32];ushort LogPixels;dword BitsPerPel;dword PelsWidth;dword PelsHeight;dword DisplayFlags;dword DisplayFrequency'
 
